@@ -1,13 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import ExpensesList from './ExpensesList';
-import { demoExpenses } from '../../utils/demoData';
+import { demoExpenses } from '../../data/demoData';
 import formatCurrency from '../../utils/formatCurrency';
 
 describe('Expenses List Component', () => {
     test('Renders all expenses with correctly formatted information', () => {
         render(<ExpensesList expensesList={demoExpenses} />);
 
-        demoExpenses.forEach(({amount, category, date, description }) => {
+        demoExpenses.forEach(({ amount, category, date, description }) => {
 
             expect(screen.getAllByText((content) => content.includes(formatCurrency(amount).replace("$", "").trim())
             ).length).toBeGreaterThan(0)
