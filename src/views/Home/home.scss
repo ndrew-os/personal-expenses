@@ -1,7 +1,25 @@
-
 .home {
-    &__icon {
-        font-size: 40px;
-        color: #000;
+  &__icon {
+    font-size: 40px;
+    color: #000;
+  }
+
+  &__create {
+    inset-inline-start: 77vw;
+    inset-block-start: 88vh;
+
+    @media (width >= 576px) {
+      inset-inline-start: 85vw;
+      inset-block-start: 87vh;
     }
+
+    i {
+      color: #fff;
+    }
+
+    button {
+      height: auto;
+      font-size: 34px;
+    }
+  }
 }

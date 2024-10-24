@@ -1,0 +1,11 @@
+.expense {
+  @media (width <= 768px) {
+    font-size: 14px;
+  }
+
+  div {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+}

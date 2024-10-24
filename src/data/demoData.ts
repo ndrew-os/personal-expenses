@@ -1,9 +1,9 @@
-import { Expense } from "../types";
+import { Category, Expense } from "../types";
 
 export const demoExpenses: Expense[] = [
     {
         amount: 23500,
-        category: "Lunch",
+        category: "Food",
         date: new Date(),
         description: "Lunch in Palmas restaurant"
     },
@@ -15,32 +15,56 @@ export const demoExpenses: Expense[] = [
     },
     {
         amount: 15000,
-        category: "Groceries",
+        category: "Food",
         date: new Date(),
         description: "Supermarket purchase at WholeFoods"
     },
     {
         amount: 78500,
-        category: "Rent",
+        category: "Home",
         date: new Date(),
         description: "Monthly apartment rent"
     },
     {
         amount: 5600.75,
-        category: "Coffee",
+        category: "Food",
         date: new Date(),
         description: "Coffee at Starbucks"
     },
     {
         amount: 4300,
-        category: "Parking",
+        category: "Transport",
         date: new Date(),
         description: "Parking fees downtown"
     },
     {
         amount: 18999.99,
-        category: "Electronics",
+        category: "Others",
         date: new Date(),
         description: "Purchase of new headphones"
+    },
+]
+
+export const demoCategories: Category[] = [
+    {
+        name: "Food"
+    },
+    {
+        name: "Transport"
+    },
+    { 
+        name: "Entertainment",
+    },
+    { 
+        name: "Health",
+    },
+    { 
+        name: "Clothing",
+    },
+    { 
+        name: "Home",
+    },
+    { 
+        name: "Others",
     },
 ]
