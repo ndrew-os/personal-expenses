@@ -1,6 +1,6 @@
 import { ModalInfo } from "../../types"
 
-const Modal: React.FC<ModalInfo> = ({ title, isForm, handler, reset, content }) => {
+const Modal: React.FC<ModalInfo> = ({ title, isForm, handler, reset, content, resetText = "Close", handlerText = "Save Changes" }) => {
     return (
         <div className="modal fade mw-80" id="formModal" tabIndex={-1} data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="modalLabel" aria-hidden="true">
             <div className="modal-dialog">
@@ -12,8 +12,8 @@ const Modal: React.FC<ModalInfo> = ({ title, isForm, handler, reset, content }) 
                         {content}
                     </div>
                     {!isForm && (<div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={reset}>Close</button>
-                        <button type="button" className="btn btn-primary" onClick={handler}>Save changes</button>
+                        <button type="button" className="btn text-white bg-black" data-bs-dismiss="modal" onClick={handler}>{handlerText}</button>
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={reset}>{resetText}</button>
                     </div>)}
 
                 </div>

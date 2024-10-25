@@ -4,7 +4,7 @@ import formatCurrency from "../../utils/formatCurrency"
 import IconButton from "../IconButton/IconButton"
 import "./expense.scss"
 import { AppDispatch } from "../../store/store"
-import { editItem, setModal } from "../../store/slices/expenseSlice"
+import { editItem, removeItem, setModal } from "../../store/slices/expenseSlice"
 import ExpenseForm from "../ExpenseForm/ExpenseForm"
 
 
@@ -23,7 +23,15 @@ const Expense: React.FC<ExpenseType> = ({ id, amount, category, date, descriptio
   }
 
   const deleteExpense = (): void => {
-
+    dispatch(setModal({
+      title: "Delete Expense",
+      content: (<span>Are you sure?</span>),
+      handler: () => {
+        if (id) dispatch(removeItem(id))
+      },
+      handlerText: "Delete",
+      reset: () => { }
+    }))
   }
 
   return (
@@ -34,7 +42,7 @@ const Expense: React.FC<ExpenseType> = ({ id, amount, category, date, descriptio
       <div className="col-8 col-lg-4">{description || ""}</div>
       <div className="col-4 col-lg-2 d-flex gap-3 justify-content-end justify-content-lg-start">
         <IconButton triggerModal={true} targetModal="#formModal" action={updateExpense}><i className="bi bi-pencil-square fs-5 text-black"></i></IconButton>
-        <IconButton action={deleteExpense}><i className="bi bi-trash3 fs-5 text-black"></i></IconButton>
+        <IconButton triggerModal={true} targetModal="#formModal" action={deleteExpense}><i className="bi bi-trash3 fs-5 text-black"></i></IconButton>
       </div>
     </div>
   )
