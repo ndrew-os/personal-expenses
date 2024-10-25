@@ -1,17 +1,20 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Expense, Category } from '../../types';
 import { demoCategories } from "../../data/demoData"
-import {dateString, dateToInput, inputToDate} from "../../utils/formatDate";
-import { defaultExpense as value } from "../../data/defaultValues";
+import { dateString, dateToInput, inputToDate } from "../../utils/formatDate";
 import "./expenseForm.scss"
+import { defaultExpense } from "../../data/defaultValues";
 
-const ExpenseForm: React.FC<{ handler: (expense: Expense) => void, discard?: () => void }> = ({ handler, discard }) => {
+const ExpenseForm: React.FC<{ value: Expense, handler: (expense: Expense) => void, discard?: () => void }> = ({ value, handler, discard }) => {
 
-    const [data, setData] = useState(value)
+    const [data, setData] = useState(defaultExpense)
+
+    useEffect(() => {
+        setData(value)
+    }, [value])
 
     const setAtt = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>, att: string): void => {
         const value = e.target.value
-        console.log(value)
         setData(prev => ({ ...prev, [att]: att != 'date' ? value : inputToDate(value) }))
     }
 
@@ -28,9 +31,7 @@ const ExpenseForm: React.FC<{ handler: (expense: Expense) => void, discard?: () 
     }
 
     const dismiss = (): void => {
-        setTimeout((): void => {
-            setData(value)
-        }, 200)
+        setData(defaultExpense)
         if (discard) discard()
     }
 
@@ -52,7 +53,7 @@ const ExpenseForm: React.FC<{ handler: (expense: Expense) => void, discard?: () 
             </div>
             <div className="mb-3">
                 <label htmlFor="dateInput" className="form-label">Date</label>
-                <input type="date" id="dateInput" className="form-control" value={dateToInput(data.date, true)} onChange={e => setAtt(e, 'date')} required max={dateToInput(new Date(), true)} />
+                <input type="date" id="dateInput" className="form-control" value={dateToInput(data.date)} onChange={e => setAtt(e, 'date')} required max={dateToInput(dateString(new Date()))} />
             </div>
             <div className="mb-3">
                 <label htmlFor="descriptionInput">Description</label>
