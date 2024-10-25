@@ -1,5 +1,5 @@
 import { Category, Expense, ModalInfo } from "../types";
-import formatDate from "../utils/formatDate";
+import { dateString } from "../utils/formatDate";
 
 export const defaultModalInfo: ModalInfo = {
     title: '',
@@ -10,6 +10,6 @@ export const defaultModalInfo: ModalInfo = {
 export const defaultExpense: Expense = {
     amount: 0,
     category: '',
-    date: new Date(),
+    date: dateString(new Date()),
     description: ''
 }

@@ -1,12 +1,15 @@
 export interface Expense {
+    id?: number,
     amount: number,
     category: string,
-    date: Date,
+    date: string,
     description?: string
 }
 
 export interface ButtonProps {
     action: () => void,
+    triggerModal?: boolean,
+    targetModal?: string,
     children?: React.ReactNode
 }
 
