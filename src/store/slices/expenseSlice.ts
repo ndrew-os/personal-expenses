@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { Expense, ModalInfo } from '../../types';
 import { createExpense, deleteExpense, fetchExpenses, updateExpenses } from '../api';
 import { defaultModalInfo } from '../../data/defaultValues';

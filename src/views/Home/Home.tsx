@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import "./home.scss"
 import ExpensesList from "../../components/ExpensesList/ExpensesList"
 import Button from "../../components/Button/Button";

@@ -1,4 +1,4 @@
-import { Category, Expense, ModalInfo } from "../types";
+import { Expense, ModalInfo } from "../types";
 import { dateString } from "../utils/formatDate";
 
 export const defaultModalInfo: ModalInfo = {

@@ -12,7 +12,7 @@ describe('Expenses List Component', () => {
             expect(screen.getAllByText((content) => content.includes(formatCurrency(amount).replace("$", "").trim())
             ).length).toBeGreaterThan(0)
             expect(screen.getAllByText(category).length).toBeGreaterThan(0)
-            expect(screen.getAllByText(`${date.getDay()}-${date.getMonth() + 1}-${date.getFullYear()}`).length).toBeGreaterThan(0)
+            expect(screen.getAllByText(date).length).toBeGreaterThan(0)
             if (description) expect(screen.getAllByText(description).length).toBeGreaterThan(0)
 
         })
