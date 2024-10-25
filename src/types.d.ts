@@ -16,7 +16,9 @@ export interface ButtonProps {
 export interface ModalInfo {
     title: string,
     isForm: boolean,
-    content: React.ReactNode
+    content: React.ReactNode,
+    resetText?: string,
+    handlerText?: string,
     reset?: (any) => void,
     handler?: (any) => void,
 }
