@@ -15,7 +15,6 @@ const Modal: React.FC<ModalInfo> = ({ title, isForm, handler, reset, content, re
                         <button type="button" className="btn text-white bg-black" data-bs-dismiss="modal" onClick={handler}>{handlerText}</button>
                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={reset}>{resetText}</button>
                     </div>)}
-
                 </div>
             </div>
         </div>
