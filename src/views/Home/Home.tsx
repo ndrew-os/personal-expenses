@@ -57,9 +57,6 @@ const Home = () => {
                     <div className="col-2 d-none d-md-flex justify-content-end">
                         <Button triggerModal={true} targetModal="#formModal" action={newExpense}>New</Button>
                     </div>
-                    <div className="d-inline-block d-md-none position-fixed home__create">
-                        <Button triggerModal={true} targetModal="#formModal" action={newExpense}><i className="bi bi-plus-lg"></i></Button>
-                    </div>
                 </header>
                 <div className="row d-flex mt-5">
                     <div className="col-12 col-lg-4 d-flex flex-column gap-3">
@@ -75,6 +72,9 @@ const Home = () => {
                         {expenses.length > 0 ? (<ExpensesList expensesList={expenses} />) : (<div className="d-flex flex-column justify-content-center align-items-center"><img className="w-75" src={noData} alt="" /><span className="fs-2">Your expenses list is empty</span></div>)}
                     </div>
                 </div>
+            </div>
+            <div className="d-inline-block d-md-none position-fixed home__create">
+                <Button triggerModal={true} targetModal="#formModal" action={newExpense}><i className="bi bi-plus-lg"></i></Button>
             </div>
             <Modal {...modalInfo} />
         </div>
