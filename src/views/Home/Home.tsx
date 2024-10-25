@@ -47,7 +47,7 @@ const Home = () => {
     }));
 
     return (
-        <div className="container-fluid position-relative">
+        <div className="container-fluid position-relative mb-5 mb-lg-0">
             <div className="container-xl">
                 <header className="row d-flex justify-content-between align-items-center mt-5">
                     <div className="col-10 d-flex align-items-center gap-4">
