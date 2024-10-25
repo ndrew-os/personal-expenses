@@ -58,7 +58,7 @@ const Home = () => {
                         <Button triggerModal={true} targetModal="#formModal" action={newExpense}>New</Button>
                     </div>
                     <div className="d-inline-block d-md-none position-fixed home__create">
-                        <Button action={newExpense}><i className="bi bi-plus-lg"></i></Button>
+                        <Button triggerModal={true} targetModal="#formModal" action={newExpense}><i className="bi bi-plus-lg"></i></Button>
                     </div>
                 </header>
                 <div className="row d-flex mt-5">
